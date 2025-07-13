@@ -1,0 +1,19 @@
+proxies:
+  - name: "111111111"
+    type: ss
+    server: 20.171.127.71
+    port: 8388
+    cipher: aes-128-gcm
+    password: "bC1jwiPEJk3Fkrg49S+DAg=="
+    udp: true
+
+proxy-groups:
+  - name: "Auto"
+    type: url-test
+    proxies:
+      - "111111111"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+rules:
+  - MATCH,Auto
